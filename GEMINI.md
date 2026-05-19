@@ -1,53 +1,38 @@
-# Gemini CLI - Claude Skills & Agent Plugins Library
+# Gemini CLI - Engineering & Developer Tools Library
 
-This repository is a production-ready, platform-agnostic library of 313+ agent skills and 400+ automation tools. It is designed using a **Domain-Driven Architecture** to provide AI agents with specialized expertise through a "write once, deploy anywhere" framework.
+This repository is a heavily curated, engineering-focused fork of the Claude Skills & Agent Plugins Library. It has been pruned from 350+ skills down to a core set of ~180 specialized capabilities tailored specifically for software engineers, architects, and DevOps practitioners.
 
 ## Repository Architecture
 
 ### 1. Domain Clusters (The Core)
-The repository is organized by business and technical functions:
-*   **Engineering & DevOps:** `/engineering`, `/engineering-team` (Architecture, SecOps, QA).
-*   **Leadership & Strategy:** `/c-level-advisor` (Founder-mode C-suite personas).
-*   **Operations & Growth:** `/business-growth`, `/business-operations`, `/commercial`.
-*   **Specialized Functions:** `/marketing-skill`, `/ra-qm-team`, `/research`, `/finance`.
+The repository is organized strictly around technical and project execution:
+*   **Engineering & DevOps:** `/engineering`, `/engineering-team` (Architecture, SecOps, CI/CD, QA).
+*   **Developer Tooling:** `/project-management` (Restored Atlassian tools like Jira/Confluence workflows).
 
 ### 2. Hierarchical Modules
-*   **Skills:** Modular instruction sets (`SKILL.md`) that define *how* to execute tasks.
-*   **Agents:** Curated personas (`agents/`) with distinct voices and skill loadouts.
-*   **Commands:** Markdown-based "slash commands" (`/commands`) for direct workflows.
+*   **Skills:** Modular instruction sets (`SKILL.md`) that define *how* to execute technical tasks.
+*   **Agents:** Curated technical personas (`agents/`) with distinct voices and skill loadouts (e.g., Senior Engineer, DevOps Engineer).
+*   **Commands:** Markdown-based "slash commands" (`/commands`) for direct developer workflows.
 *   **Reference Assets:** Deep knowledge bases (`references/`) and templates (`assets/`).
 
 ## Operational Standards ("The Rules of the Game")
 
 All interactions and contributions MUST adhere to these foundational principles:
 
-### 1. Skill Authoring Patterns (The 10 Patterns)
-*   **Context-First:** Always check for domain context files (e.g., `project-context.md`) before asking questions.
-*   **Practitioner Voice:** Act as a senior expert (opinionated, direct) rather than a neutral textbook.
-*   **Multi-Mode:** Design for multiple entry points (Build from scratch vs. Optimize existing).
-*   **Related Skills:** Always provide "When to use / When NOT to use" disambiguation for related skills.
-*   **Proactive Triggers:** Surface risks and issues without being asked when patterns are detected.
+### 1. Skill Authoring Patterns
+*   **Context-First:** Always check for domain context files (e.g., `project-context.md`) before modifying architecture.
+*   **Practitioner Voice:** Act as a senior technical expert (opinionated, direct).
+*   **Multi-Mode:** Design for multiple entry points (Scaffold from scratch vs. Refactor existing).
+*   **Proactive Triggers:** Surface technical debt, security risks, and architectural flaws without being asked when patterns are detected.
 
-### 2. Communication Standard
-All output should follow the **Bottom Line First** protocol:
-1.  **BOTTOM LINE:** One-sentence answer.
-2.  **WHAT:** Categorized findings with confidence tags (🟢 verified, 🟡 medium, 🔴 assumed).
-3.  **WHY THIS MATTERS:** Business impact/consequence.
-4.  **HOW TO ACT:** Concrete actions with owners and deadlines.
-
-### 3. Technical Constraints
+### 2. Technical Constraints
 *   **Python Scripts:** Must use **standard library only** (no `pip` installs). Must support `--json` and `--help`.
 *   **File Economy:** Edit existing files rather than creating new ones unless necessary.
-*   **SKILL.md Limits:** Keep main skill files under 500 lines (ideally <200); move depth to `references/`.
-
-## Workflow & Pipeline
-
-*   **Production Pipeline:** Every skill follows: Intent → Research → Draft → Eval → Iterate → Compliance → Package → Deploy → Verify.
-*   **Quality Gate:** Skills must pass a structured compliance check (Score ≥ 85%) before merging.
-*   **Orchestration:** Combine Personas (Who), Skills (How), and Commands (What) to solve complex, cross-domain problems.
+*   **SKILL.md Limits:** Keep main skill files under 500 lines (ideally <200); move technical depth to `references/`.
+*   **Markdown AST:** Documentation and skills are treated as "Code". The AST of markdown files (Frontmatter, H1, H2) is used to map repository structures.
 
 ## Usage in Gemini CLI
 
 *   **Install:** Run `./scripts/gemini-install.sh`.
 *   **Activate:** Use `activate_skill(name="<skill-name>")`.
-*   **Validate:** Use `engineering/skill-tester/scripts/skill_validator.py` for new modules.
+*   **Discover:** Refer to `CORPUS_MAP.md` for a semantic map of all currently available engineering skills.

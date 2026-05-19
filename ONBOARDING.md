@@ -1,12 +1,12 @@
-# Alireza Rezvani Skills Collection
+# Alireza Rezvani Skills Collection (Engineering & DevOps Edition)
 
-> A comprehensive library of AI agent skills, prompts, and automation workflows for engineering, product, business operations, and executive leadership.
+> A highly curated library of AI agent skills, prompts, and automation workflows focused exclusively on Engineering, DevOps, Architecture, and Developer Tooling (including Atlassian).
 
 [![CI](https://github.com/alirezarezvani/claude-skills/actions/workflows/ci-quality-gate.yml/badge.svg)](https://github.com/alirezarezvani/claude-skills/actions)
 
 ## What is this?
 
-This repository is a structured monorepo containing a vast collection of "skills" designed for AI agents (specifically Claude and Gemini). It serves as a centralized hub for specialized agentic workflows, prompts, and scripts that extend the capabilities of LLMs in professional environments.
+This repository is a pruned, engineering-focused fork of the Alireza Rezvani Skills Collection. It contains ~180 specialized agentic workflows designed to extend the capabilities of AI agents (like Claude Code and Gemini CLI) in professional software development environments.
 
 ---
 
@@ -22,7 +22,7 @@ This repository is a structured monorepo containing a vast collection of "skills
 ### Setup (2 minutes)
 
 ```bash
-git clone https://github.com/alirezarezvani/claude-skills.git
+git clone git@github.com:onne/claude-skills.git
 cd claude-skills
 # Optional: explore scripts
 ls scripts/
@@ -32,7 +32,7 @@ ls scripts/
 
 - [ ] Repository structure is visible
 - [ ] `GEMINI.md` exists in the root
-- [ ] At least one domain folder (e.g., `engineering/`) contains `skills/`
+- [ ] The `engineering/` directory is present and populated
 
 ---
 
@@ -41,15 +41,15 @@ ls scripts/
 ### System Overview
 
 ```
-[User/Agent]
+[Developer/Agent CLI]
     |
     v
-[Skills Repository]
+[Engineering Skills Repository]
     |
-    +-> [Domain: Engineering] -> [Skill: codebase-onboarding]
-    +-> [Domain: Product]     -> [Skill: prd-generator]
-    +-> [Domain: Business]    -> [Skill: competitive-matrix]
-    +-> [Domain: C-Level]     -> [Skill: cto-advisor]
+    +-> [Domain: Architecture] -> [Skill: system-designer, database-schema]
+    +-> [Domain: DevOps]       -> [Skill: ci-cd-builder, terraform-expert]
+    +-> [Domain: Dev Tools]    -> [Skill: codebase-onboarding, llm-wiki]
+    +-> [Domain: Atlassian]    -> [Skill: jira-expert, confluence-expert]
 ```
 
 ### Tech Stack
@@ -57,7 +57,7 @@ ls scripts/
 | Layer | Technology | Why |
 |-------|-----------|-----|
 | Skill Definitions | Markdown (SKILL.md) | Human-readable and agent-parseable |
-| Automation | Python | Cross-platform scripting |
+| Automation | Python / Shell | Cross-platform scripting |
 | Documentation | MkDocs | Static site generation for skills catalog |
 | CI/CD | GitHub Actions | Quality gates and skill validation |
 
@@ -68,40 +68,30 @@ ls scripts/
 | Path | Purpose |
 |------|---------|
 | `GEMINI.md` | Core project instructions and agent context |
+| `CORPUS_MAP.md` | Auto-generated semantic map of all 180 remaining skills |
 | `SKILL-AUTHORING-STANDARD.md` | Requirements for adding new skills |
 | `engineering/skills/` | Deep technical and developer experience skills |
-| `business-operations/` | Operational and process automation skills |
-| `.gemini/skills-index.json` | Registry of available skills for Gemini |
-| `scripts/` | Shared utility scripts for skill execution |
+| `project-management/skills/`| Restored Atlassian tool integrations |
+| `.gemini/skills-index.json` | The active registry of available skills |
 
 ---
 
 ## Common Developer Tasks
 
-### Create a new skill
+### Add a New Dev Tool Skill
 
 Follow the `SKILL-AUTHORING-STANDARD.md` and use the `skill-creator` skill.
 
 ```bash
 # Example: Use the skill-creator (if available in your agent)
-"Create a new skill for 'database-optimizer'"
+"Create a new skill for 'rust-cargo-optimizer'"
 ```
 
-### Run a codebase analysis
+### Explore the Codebase
 
 ```bash
 python3 engineering/skills/codebase-onboarding/scripts/codebase_analyzer.py .
 ```
-
----
-
-## Debugging Guide
-
-### Common Issues
-
-- **Skill not found:** Check if the skill name matches the directory name and is indexed in `.gemini/skills-index.json`.
-- **Script failures:** Ensure Python 3 is installed and all standard library modules are available.
-- **MkDocs build errors:** Check `mkdocs.yml` for navigation inconsistencies.
 
 ---
 
@@ -116,20 +106,6 @@ python3 engineering/skills/codebase-onboarding/scripts/codebase_analyzer.py .
 
 ### Commit Convention
 
-- `feat(domain): add new skill-name`
+- `feat(engineering): add new skill-name`
 - `fix(skill): resolve issue in skill-name`
 - `docs: update documentation`
-
----
-
-## Audience-Specific Notes
-
-### Engineers
-- Focus on `engineering/` and `engineering-team/` domains.
-- Leverage `scripts/` for automating repetitive tasks.
-
-### Product/Business Owners
-- Explore `product-team/` and `business-growth/` for strategic alignment.
-
-### Skill Authors
-- Strictly adhere to `SKILL-AUTHORING-STANDARD.md` to maintain consistency across the library.

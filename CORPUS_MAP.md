@@ -2,7 +2,7 @@
 
 > An auto-generated semantic map of the capabilities in this repository. Stripped of all slash-commands, conversational personas, and bloat. Just the raw, heavy-lifting technical tools.
 
-Total entries indexed: 62
+Total entries indexed: 61
 
 
 ## 🎯 Raw Technical Tools
@@ -65,7 +65,6 @@ Total entries indexed: 62
 - **`spec-driven-workflow`**: Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices
 - **`tc-tracker`**: Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions
 - **`tech-debt-tracker`**: Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans
-- **`terraform-patterns`**: Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw
 - **`write-a-skill`**: Create new agent skills with proper structure, progressive disclosure, and bundled resources
 ### Project-Management
 - **`atlassian-admin`**: Atlassian Administrator for managing and organizing Atlassian products (Jira, Confluence, Bitbucket, Trello), users, permissions, security, integrations, system configuration, and org-wide governance

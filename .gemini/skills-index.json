@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "gemini-cli-skills",
-  "total_skills": 62,
+  "total_skills": 61,
   "skills": [
     {
       "name": "adversarial-reviewer",
@@ -292,11 +292,6 @@
       "name": "tech-stack-evaluator",
       "category": "engineering",
       "description": "Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring. Use when comparing frameworks, evaluating technology stacks, calculating total cost of ownership, assessing migration paths, or analyzing ecosystem viability."
-    },
-    {
-      "name": "terraform-patterns",
-      "category": "engineering-advanced",
-      "description": "Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
     },
     {
       "name": "testrail",

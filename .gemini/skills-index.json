@@ -1,18 +1,8 @@
 {
   "version": "1.0.0",
   "name": "gemini-cli-skills",
-  "total_skills": 150,
+  "total_skills": 62,
   "skills": [
-    {
-      "name": "README",
-      "category": "agent",
-      "description": "Agent from personas"
-    },
-    {
-      "name": "TEMPLATE",
-      "category": "agent",
-      "description": "One paragraph describing what this agent does, who it's for, and when to activate it."
-    },
     {
       "name": "adversarial-reviewer",
       "category": "engineering",
@@ -54,19 +44,9 @@
       "description": "Use when the user wants more human-like AI responses \u2014 less robotic, less listy, more authentic. Triggers: 'behuman', 'be real', 'like a human', 'more human', 'less AI', 'talk like a person', 'mirror mode', 'stop being so AI', or when conversations are emotionally charged (grief, job loss, relationship advice, fear). NOT for technical questions, code generation, or factual lookups."
     },
     {
-      "name": "browserstack",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
       "name": "caveman",
       "category": "engineering-advanced",
       "description": ">"
-    },
-    {
-      "name": "changelog",
-      "category": "command",
-      "description": "Generate changelogs from git history and validate conventional commits. Usage: /changelog <generate|lint> [options]"
     },
     {
       "name": "changelog-generator",
@@ -79,11 +59,6 @@
       "description": "Use when planning, running, or learning from chaos engineering experiments. Triggers on \"chaos experiment\", \"fault injection\", \"gameday\", \"resilience test\", \"blast radius\", \"steady state\", \"abort criteria\", \"Chaos Toolkit\", \"Chaos Mesh\", \"Litmus\", \"Gremlin\", \"AWS FIS\", or any deliberate failure-injection question. Ships experiment designer, blast-radius calculator, and postmortem generator (all stdlib Python), 4 references on chaos principles + experiment design + attack taxonomy + tooling landscape, and a /chaos-experiment slash command. Composes with feature-flags-architect (kill switches as abort triggers) and kubernetes-operator (common chaos targets)."
     },
     {
-      "name": "chaos-experiment",
-      "category": "command",
-      "description": "Interactive wizard to design and validate a chaos engineering experiment"
-    },
-    {
       "name": "ci-cd-pipeline-builder",
       "category": "engineering-advanced",
       "description": "Generate pragmatic CI/CD pipelines from detected project stack signals \u2014 fast baseline generation, repeatable checks, environment-aware deployment stages. Use when setting up CI for a new project, refactoring existing pipelines, or standardizing deployment workflows across multiple repos."
@@ -92,26 +67,6 @@
       "name": "cloud-security",
       "category": "engineering",
       "description": "Use when assessing cloud infrastructure for security misconfigurations, IAM privilege escalation paths, S3 public exposure, open security group rules, or IaC security gaps. Covers AWS, Azure, and GCP posture assessment with MITRE ATT&CK mapping."
-    },
-    {
-      "name": "cmd-a11y-audit",
-      "category": "command",
-      "description": "Scan a frontend project for WCAG 2.2 accessibility violations and fix them. Usage: /a11y-audit [path]"
-    },
-    {
-      "name": "cmd-code-to-prd",
-      "category": "command",
-      "description": "Reverse-engineer a frontend codebase into a PRD. Usage: /code-to-prd [path]"
-    },
-    {
-      "name": "cmd-cs-aeo",
-      "category": "command",
-      "description": "/cs:aeo \u2014 Answer Engine Optimization workflow. Audit content for E-E-A-T + structure signals that drive LLM citation (ChatGPT, Perplexity, Claude, Gemini, Mistral). Optimize content in 3 modes (conservative/balanced/aggressive). Track which LLMs cite which pages via local ledger. Industry-aware thresholds (8 industries with YMYL calibration). Distinct from SEO \u2014 refuses to optimize one at expense of the other."
-    },
-    {
-      "name": "cmd-focused-fix",
-      "category": "command",
-      "description": "Deep-dive feature repair \u2014 systematically fix an entire feature/module across all its files and dependencies. Usage: /focused-fix <feature-path>"
     },
     {
       "name": "code-reviewer",
@@ -134,74 +89,9 @@
       "description": ">"
     },
     {
-      "name": "competitive-matrix",
-      "category": "command",
-      "description": "Build competitive analysis matrices with scoring and gap analysis. Usage: /competitive-matrix <analyze> [options]"
-    },
-    {
       "name": "confluence-expert",
       "category": "project-management",
       "description": "Atlassian Confluence expert for creating and managing spaces, knowledge bases, and documentation. Configures space permissions and hierarchies, creates page templates with macros, sets up documentation taxonomies, designs page layouts, and manages content governance. Use when users need to build or restructure a Confluence space, design page hierarchies with permission structures, author or standardise documentation templates, embed Jira reports in pages, run knowledge base audits, or establish documentation standards and collaborative workflows."
-    },
-    {
-      "name": "content-strategist",
-      "category": "agent",
-      "description": "Builds content engines that rank, convert, and compound. Thinks in systems \u2014 topic clusters, not individual posts. Every piece earns its place or gets killed."
-    },
-    {
-      "name": "coverage",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
-      "name": "cs-engineering-lead",
-      "category": "agent",
-      "description": "Engineering Team Lead agent for coordinating QA, security, data engineering, ML, and frontend/backend teams. Orchestrates engineering-team skills for team-level technical decisions. Spawn when users need team coordination, tech stack evaluation, incident response, or cross-functional engineering work."
-    },
-    {
-      "name": "cs-karpathy-reviewer",
-      "category": "agent",
-      "description": "Reviews staged git changes against Karpathy's 4 coding principles. Runs complexity_checker on changed files, diff_surgeon on the diff, and produces a verdict with specific fix recommendations. Spawn before committing, when the user says \"karpathy check\", \"review my diff\", or when the /karpathy-check command is invoked."
-    },
-    {
-      "name": "cs-senior-engineer",
-      "category": "agent",
-      "description": "Senior Engineer agent for architecture decisions, code review, DevOps, and API design. Orchestrates engineering and engineering-team skills for technical implementation work. Spawn when users need system design, code quality review, CI/CD pipeline setup, or infrastructure decisions."
-    },
-    {
-      "name": "cs-wiki-ingestor",
-      "category": "agent",
-      "description": "Dispatched sub-agent that ingests a new source into an LLM Wiki vault. Reads the source, proposes TL;DR and key claims, identifies which entity/concept/synthesis pages will be touched, flags contradictions with existing pages, and \u2014 after user confirmation \u2014 writes the source summary, updates cross-references across 5-15 pages, regenerates the index, and appends a standardized log entry. Spawn when the user says \"ingest this\", \"add this paper/article/book to the wiki\", or drops a file into raw/."
-    },
-    {
-      "name": "cs-wiki-librarian",
-      "category": "agent",
-      "description": "Dispatched sub-agent that answers queries against an LLM Wiki vault. Reads index.md first, drills into 3-10 relevant pages across categories, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back into the wiki as a new comparison or synthesis page. Spawn when the user asks a substantive question the wiki might answer, says \"what does the wiki say about X\", \"compare A and B across my sources\", or wants to explore a topic."
-    },
-    {
-      "name": "cs-wiki-linter",
-      "category": "agent",
-      "description": "Dispatched sub-agent that runs a periodic health check on an LLM Wiki vault. Runs mechanical checks via scripts (orphans, broken links, stale pages, missing frontmatter, duplicate titles, log gaps), does semantic checks (contradictions, stale claims, cross-reference gaps, concepts missing their own page), and produces a markdown report with suggested actions. Spawn weekly, after batch ingests, or when the user says \"check the wiki\" / \"lint my wiki\" / \"audit the vault\"."
-    },
-    {
-      "name": "cs-workspace-admin",
-      "category": "agent",
-      "description": "Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration."
-    },
-    {
-      "name": "database-designer",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships."
-    },
-    {
-      "name": "database-schema-designer",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations."
-    },
-    {
-      "name": "demo-video",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright, ffmpeg, and edge-tts MCPs to produce polished video content."
     },
     {
       "name": "dependency-auditor",
@@ -209,29 +99,9 @@
       "description": "Audit and manage dependencies across multi-language projects. Identifies vulnerabilities, license conflicts, transitive dependency risks, and safe-upgrade paths. Use when auditing third-party packages before release, investigating a CVE, planning a major version bump, or running a license-compliance review."
     },
     {
-      "name": "devops-engineer",
-      "category": "agent",
-      "description": "Builds infrastructure that scales without babysitting. Automates everything worth automating. Monitors before it breaks. Treats clicking in consoles as a production incident waiting to happen."
-    },
-    {
       "name": "docker-development",
       "category": "engineering-advanced",
       "description": "Docker and container development agent skill and plugin for Dockerfile optimization, docker-compose orchestration, multi-stage builds, and container security hardening. Use when: user wants to optimize a Dockerfile, create or improve docker-compose configurations, implement multi-stage builds, audit container security, reduce image size, or follow container best practices. Covers build performance, layer caching, secret management, and production-ready container patterns."
-    },
-    {
-      "name": "email-template-builder",
-      "category": "engineering",
-      "description": "Build complete transactional email systems: React Email templates, provider integration (Resend, Postmark, SendGrid, AWS SES), preview server, i18n support, dark mode, spam optimization, analytics tracking. Use when adding transactional email to a new product, migrating between email providers, refactoring legacy email templates for accessibility, or adding internationalization to existing templates."
-    },
-    {
-      "name": "engineering-advanced-skills",
-      "category": "engineering-advanced",
-      "description": "25 advanced engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Agent design, RAG, MCP servers, CI/CD, database design, observability, security auditing, release management, platform ops."
-    },
-    {
-      "name": "engineering-skills",
-      "category": "engineering",
-      "description": "23 engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw, and 6 more tools. Architecture, frontend, backend, QA, DevOps, security, AI/ML, data engineering, Playwright, Stripe, AWS, MS365. 30+ Python tools (stdlib-only)."
     },
     {
       "name": "env-secrets-manager",
@@ -239,39 +109,9 @@
       "description": "Manage environment-variable hygiene and secrets safety across local development and production. Practical auditing, drift awareness, rotation readiness. Use when auditing .env files for committed secrets, planning a credential rotation, debugging missing-env-var production incidents, or hardening a new project against secrets leakage."
     },
     {
-      "name": "epic-design",
-      "category": "engineering",
-      "description": ">"
-    },
-    {
-      "name": "eval",
-      "category": "engineering-advanced",
-      "description": "Evaluate and rank agent results by metric or LLM judge for an AgentHub session."
-    },
-    {
-      "name": "extract",
-      "category": "engineering",
-      "description": "Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL.md, reference docs, and examples."
-    },
-    {
       "name": "feature-flags-architect",
       "category": "engineering-advanced",
       "description": "Use when adding, retiring, or auditing feature flags. Triggers on \"add a flag\", \"ship behind a flag\", \"rollout plan\", \"kill switch\", \"stale flags\", \"flag debt\", \"LaunchDarkly\", \"GrowthBook\", \"Statsig\", \"Unleash\", \"Flipt\", or any progressive-delivery question. Ships flag debt scanner, rollout planner, and kill-switch auditor (all stdlib Python), 4 references on flag taxonomy + provider trade-offs + rollout strategies + lifecycle, plus a /flag-cleanup slash command."
-    },
-    {
-      "name": "financial-health",
-      "category": "command",
-      "description": "Run financial ratio analysis, DCF valuation, budget variance analysis, and rolling forecasts. Usage: /financial-health <ratios|dcf|budget|forecast> <data.json>"
-    },
-    {
-      "name": "fix",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
-      "name": "flag-cleanup",
-      "category": "command",
-      "description": "Run the quarterly feature-flag cleanup workflow on the current repo"
     },
     {
       "name": "focused-fix",
@@ -279,24 +119,9 @@
       "description": "Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-end. Triggers: 'make X work', 'fix the Y feature', 'the Z module is broken', 'focus on [area]'. Not for quick single-bug fixes \u2014 this is for systematic deep-dive repair across all files and dependencies."
     },
     {
-      "name": "generate",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
       "name": "git-worktree-manager",
       "category": "engineering-advanced",
       "description": "Run parallel feature work safely with Git worktrees. Standardizes branch isolation, port allocation, environment sync, and cleanup so each worktree behaves like an independent local app. Optimized for multi-agent workflows where each agent or terminal session owns one worktree. Use when running multiple feature branches simultaneously, isolating experimental work, or coordinating multi-agent development across the same repo."
-    },
-    {
-      "name": "google-workspace",
-      "category": "command",
-      "description": "Google Workspace CLI operations: setup diagnostics, security audit, recipe discovery, and output analysis. Usage: /google-workspace <setup|audit|recipe|analyze> [options]"
-    },
-    {
-      "name": "google-workspace-cli",
-      "category": "engineering",
-      "description": "Google Workspace administration via the gws CLI. Install, authenticate, and automate Gmail, Drive, Sheets, Calendar, Docs, Chat, and Tasks. Run security audits, execute 43 built-in recipes, and use 10 persona bundles. Use for Google Workspace admin, gws CLI setup, Gmail automation, Drive management, or Calendar scheduling."
     },
     {
       "name": "grill-me",
@@ -307,11 +132,6 @@
       "name": "grill-with-docs",
       "category": "engineering-advanced",
       "description": "Docs-anchored grilling session \u2014 challenges a plan against the project's existing language (CONTEXT.md) and recorded decisions (docs/adr/), and updates those files inline as terminology and decisions crystallise. Use when user wants to stress-test a plan against documented domain language, or mentions \"grill with docs\"."
-    },
-    {
-      "name": "growth-marketer",
-      "category": "agent",
-      "description": "Growth marketing specialist for bootstrapped startups and indie hackers. Builds content engines, optimizes funnels, runs launch sequences, and finds scalable acquisition channels \u2014 all on a budget that makes enterprise marketers cry."
     },
     {
       "name": "handoff",
@@ -334,24 +154,9 @@
       "description": "Use when a security incident has been detected or declared and needs classification, triage, escalation path determination, and forensic evidence collection. Covers SEV1-SEV4 classification, false positive filtering, incident taxonomy, and NIST SP 800-61 lifecycle."
     },
     {
-      "name": "init",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
-      "name": "interview-system-designer",
-      "category": "engineering-advanced",
-      "description": "This skill should be used when the user asks to \"design interview processes\", \"create hiring pipelines\", \"calibrate interview loops\", \"generate interview questions\", \"design competency matrices\", \"analyze interviewer bias\", \"create scoring rubrics\", \"build question banks\", or \"optimize hiring systems\". Use for designing role-specific interview loops, competency assessments, and hiring calibration systems."
-    },
-    {
       "name": "jira-expert",
       "category": "project-management",
       "description": "Atlassian Jira expert for creating and managing projects, planning, product discovery, JQL queries, workflows, custom fields, automation, reporting, and all Jira features. Use for Jira project setup, configuration, advanced search, dashboard creation, workflow design, and technical Jira operations."
-    },
-    {
-      "name": "karpathy-check",
-      "category": "command",
-      "description": "Run Karpathy's 4-principle review on staged changes or the last commit. Checks complexity, diff noise, hidden assumptions, and goal verification. Usage /karpathy-check [--last-commit]"
     },
     {
       "name": "karpathy-coder",
@@ -374,19 +179,9 @@
       "description": "Use when building or maintaining a persistent personal knowledge base (second brain) in Obsidian where an LLM incrementally ingests sources, updates entity/concept pages, maintains cross-references, and keeps a synthesis current. Triggers include \"second brain\", \"Obsidian wiki\", \"personal knowledge management\", \"ingest this paper/article/book\", \"build a research wiki\", \"compound knowledge\", \"Memex\", or whenever the user wants knowledge to accumulate across sessions instead of being re-derived by RAG on every query."
     },
     {
-      "name": "loop",
-      "category": "engineering-advanced",
-      "description": "Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly). Uses CronCreate for scheduling."
-    },
-    {
       "name": "mcp-server-builder",
       "category": "engineering-advanced",
       "description": "Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contracts instead of hand-written tool wrappers. Python and TypeScript support, schema validation, safe evolution. Use when exposing an existing API as an MCP server, building tool integrations for Claude or Codex or Cursor, or scaffolding an MCP project from scratch."
-    },
-    {
-      "name": "migrate",
-      "category": "engineering",
-      "description": ">-"
     },
     {
       "name": "migration-architect",
@@ -399,24 +194,9 @@
       "description": "Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Cross-package impact analysis, selective builds/tests on affected packages, remote caching, dependency graph visualization, and structured multi-repo to monorepo migrations. Use when setting up a new monorepo, optimizing CI for a large workspace, debugging cross-package dependency issues, or planning a multi-repo consolidation."
     },
     {
-      "name": "ms365-tenant-manager",
-      "category": "engineering",
-      "description": "Microsoft 365 tenant administration for Global Administrators. Automate M365 tenant setup, Office 365 admin tasks, Azure AD user management, Exchange Online configuration, Teams administration, and security policies. Generate PowerShell scripts for bulk operations, Conditional Access policies, license management, and compliance reporting. Use for M365 tenant manager, Office 365 admin, Azure AD users, Global Administrator, tenant configuration, or Microsoft 365 automation."
-    },
-    {
       "name": "observability-designer",
       "category": "engineering-advanced",
       "description": "Design production-ready observability strategies combining metrics, logs, and traces. Includes SLI/SLO design, golden-signals monitoring, alert optimization. Use when adding observability to a new service, refactoring alerting that is too noisy, or designing an SLO program before scaling production load."
-    },
-    {
-      "name": "okr",
-      "category": "command",
-      "description": "Generate OKR cascades from company strategy to team objectives. Usage: /okr generate <strategy>"
-    },
-    {
-      "name": "operator-audit",
-      "category": "command",
-      "description": "Run the full Kubernetes Operator audit (CRD + reconcile + capability) on the current repo"
     },
     {
       "name": "performance-profiler",
@@ -424,39 +204,9 @@
       "description": "Systematic performance profiling for Node.js, Python, and Go applications. Identifies CPU, memory, and I/O bottlenecks, generates flamegraphs, analyzes bundle sizes, optimizes database queries, runs load tests with k6 and Artillery. Always measures before and after. Use when investigating a slow endpoint, planning a performance budget, or hunting a memory leak in production."
     },
     {
-      "name": "persona",
-      "category": "command",
-      "description": "Generate data-driven user personas for UX research and product design. Usage: /persona generate [options]"
-    },
-    {
-      "name": "pipeline",
-      "category": "command",
-      "description": "Detect stack and generate CI/CD pipeline configs. Usage: /pipeline <detect|generate> [options]"
-    },
-    {
-      "name": "plugin-audit",
-      "category": "command",
-      "description": "|"
-    },
-    {
       "name": "pr-review-expert",
       "category": "engineering-advanced",
       "description": "Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs."
-    },
-    {
-      "name": "prd",
-      "category": "command",
-      "description": "Quick PRD generation command. Usage: /prd <feature-or-problem>"
-    },
-    {
-      "name": "project-health",
-      "category": "command",
-      "description": "Portfolio health dashboard and risk matrix analysis. Usage: /project-health <dashboard|risk> [options]"
-    },
-    {
-      "name": "promote",
-      "category": "engineering",
-      "description": "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement."
     },
     {
       "name": "prompt-governance",
@@ -474,44 +224,9 @@
       "description": "Use when the user asks to plan releases, manage changelogs, coordinate deployments, create release branches, or automate versioning."
     },
     {
-      "name": "remember",
-      "category": "engineering",
-      "description": "Explicitly save important knowledge to auto-memory with timestamp and context. Use when a discovery is too important to rely on auto-capture."
-    },
-    {
-      "name": "report",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
-      "name": "retro",
-      "category": "command",
-      "description": "Analyze sprint retrospectives for patterns and action item tracking. Usage: /retro analyze <retro_data.json>"
-    },
-    {
-      "name": "review",
-      "category": "engineering",
-      "description": "Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics."
-    },
-    {
-      "name": "rice",
-      "category": "command",
-      "description": "RICE feature prioritization with scoring and capacity planning. Usage: /rice prioritize <features.csv> [options]"
-    },
-    {
       "name": "runbook-generator",
       "category": "engineering-advanced",
       "description": "Generate operational runbooks from a service name \u2014 deployment, incident response, maintenance, and rollback workflows. Templated structure customizable per environment. Use when documenting on-call procedures for a new service, standardizing incident response across teams, or producing runbooks before launching to production."
-    },
-    {
-      "name": "saas-health",
-      "category": "command",
-      "description": "Calculate SaaS health metrics (ARR, MRR, churn, CAC, LTV, NRR) and benchmark against industry standards. Usage: /saas-health <metrics|quick-ratio|simulate> [options]"
-    },
-    {
-      "name": "sample-skill",
-      "category": "engineering-advanced",
-      "description": "Skill from engineering/skills/skill-tester/assets/sample-skill"
     },
     {
       "name": "secrets-vault-manager",
@@ -529,54 +244,9 @@
       "description": "Use when the user asks to perform security audits, penetration testing, vulnerability scanning, OWASP Top 10 checks, or offensive security assessments. Covers static analysis, dependency scanning, secret detection, API security testing, and pen test report generation."
     },
     {
-      "name": "self-eval",
-      "category": "engineering-advanced",
-      "description": "Honestly evaluate AI work quality using a two-axis scoring system. Use after completing a task, code review, or work session to get an unbiased assessment. Detects score inflation, forces devil's advocate reasoning, and persists scores across sessions."
-    },
-    {
       "name": "self-improving-agent",
       "category": "engineering",
       "description": "Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, extract recurring solutions into reusable skills. Use when: (1) reviewing what Claude has learned about your project, (2) graduating a pattern from notes to enforced rules, (3) turning a debugging solution into a skill, (4) checking memory health and capacity."
-    },
-    {
-      "name": "senior-architect",
-      "category": "engineering",
-      "description": "This skill should be used when the user asks to \"design system architecture\", \"evaluate microservices vs monolith\", \"create architecture diagrams\", \"analyze dependencies\", \"choose a database\", \"plan for scalability\", \"make technical decisions\", or \"review system design\". Use for architecture decision records (ADRs), tech stack evaluation, system design reviews, dependency analysis, and generating architecture diagrams in Mermaid, PlantUML, or ASCII format."
-    },
-    {
-      "name": "senior-backend",
-      "category": "engineering",
-      "description": "Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening. Use when the user asks to \"design REST APIs\", \"optimize database queries\", \"implement authentication\", \"build microservices\", \"review backend code\", \"set up GraphQL\", \"handle database migrations\", or \"load test APIs\". Covers Node.js/Express/Fastify development, PostgreSQL optimization, API security, and backend architecture patterns."
-    },
-    {
-      "name": "senior-devops",
-      "category": "engineering",
-      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementing monitoring, or optimizing deployment processes."
-    },
-    {
-      "name": "senior-prompt-engineer",
-      "category": "engineering",
-      "description": "This skill should be used when the user asks to \"optimize prompts\", \"design prompt templates\", \"evaluate LLM outputs\", \"build agentic systems\", \"implement RAG\", \"create few-shot examples\", \"analyze token usage\", or \"design AI workflows\". Use for prompt engineering patterns, LLM evaluation frameworks, agent architectures, and structured output design."
-    },
-    {
-      "name": "senior-qa",
-      "category": "engineering",
-      "description": "Generates unit tests, integration tests, and E2E tests for React/Next.js applications. Scans components to create Jest + React Testing Library test stubs, analyzes Istanbul/LCOV coverage reports to surface gaps, scaffolds Playwright test files from Next.js routes, mocks API calls with MSW, creates test fixtures, and configures test runners. Use when the user asks to \"generate tests\", \"write unit tests\", \"analyze test coverage\", \"scaffold E2E tests\", \"set up Playwright\", \"configure Jest\", \"implement testing patterns\", or \"improve test quality\"."
-    },
-    {
-      "name": "senior-secops",
-      "category": "engineering",
-      "description": "Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices. Runs SAST/DAST scans, generates CVE remediation plans, checks dependency vulnerabilities, creates security policies, enforces secure coding patterns, and automates compliance checks against SOC2, PCI-DSS, HIPAA, and GDPR. Use when conducting a security review or audit, responding to a CVE or security incident, hardening infrastructure, implementing authentication or secrets management, running penetration test prep, checking OWASP Top 10 exposure, or enforcing security controls in CI/CD pipelines."
-    },
-    {
-      "name": "senior-security",
-      "category": "engineering",
-      "description": "Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing. Includes STRIDE analysis, OWASP guidance, cryptography patterns, and security scanning tools. Use when the user asks about security reviews, threat analysis, vulnerability assessments, secure coding practices, security audits, attack surface analysis, CVE remediation, or security best practices."
-    },
-    {
-      "name": "seo-auditor",
-      "category": "command",
-      "description": "|"
     },
     {
       "name": "ship-gate",
@@ -594,44 +264,9 @@
       "description": "Validate, test, and score the quality of skills within the claude-skills ecosystem. Comprehensive meta-skill: structure validation, Python script testing (syntax + imports + runtime + output format), multi-dimensional quality scoring with letter grades and tier classification (BASIC/STANDARD/POWERFUL). Use when authoring a new skill, auditing existing skills for tier promotion, setting up pre-commit hooks for skill quality, or integrating skill QA into CI."
     },
     {
-      "name": "skills-chaos-engineering",
-      "category": "engineering-advanced",
-      "description": "Use when planning, running, or learning from chaos engineering experiments. Triggers on \"chaos experiment\", \"fault injection\", \"gameday\", \"resilience test\", \"blast radius\", \"steady state\", \"abort criteria\", \"Chaos Toolkit\", \"Chaos Mesh\", \"Litmus\", \"Gremlin\", \"AWS FIS\", or any deliberate failure-injection question. Ships experiment designer, blast-radius calculator, and postmortem generator (all stdlib Python), 4 references on chaos principles + experiment design + attack taxonomy + tooling landscape, and a /chaos-experiment slash command. Composes with feature-flags-architect (kill switches as abort triggers) and kubernetes-operator (common chaos targets)."
-    },
-    {
-      "name": "skills-feature-flags-architect",
-      "category": "engineering-advanced",
-      "description": "Use when adding, retiring, or auditing feature flags. Triggers on \"add a flag\", \"ship behind a flag\", \"rollout plan\", \"kill switch\", \"stale flags\", \"flag debt\", \"LaunchDarkly\", \"GrowthBook\", \"Statsig\", \"Unleash\", \"Flipt\", or any progressive-delivery question. Ships flag debt scanner, rollout planner, and kill-switch auditor (all stdlib Python), 4 references on flag taxonomy + provider trade-offs + rollout strategies + lifecycle, plus a /flag-cleanup slash command."
-    },
-    {
-      "name": "skills-kubernetes-operator",
-      "category": "engineering-advanced",
-      "description": "Use when building a Kubernetes Operator \u2014 custom controllers that reconcile CRD state. Triggers on \"build an operator\", \"CRD design\", \"reconcile loop\", \"controller-runtime\", \"kubebuilder\", \"operator-sdk\", \"metacontroller\", \"KOPF\", \"operator capability levels\", or \"custom resource\". Ships CRD validator, reconcile-loop linter, and OperatorHub capability auditor (all stdlib Python), 4 references on the operator pattern + CRD design + reconcile patterns + tooling landscape, and a /operator-audit slash command. NOT a generic k8s skill \u2014 specifically the Operator pattern."
-    },
-    {
-      "name": "skills-review",
-      "category": "engineering",
-      "description": ">-"
-    },
-    {
-      "name": "skills-slo-architect",
-      "category": "engineering-advanced",
-      "description": "Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on \"define an SLO\", \"what should our SLO be\", \"error budget\", \"burn rate\", \"SLI\", \"service level objective\", \"Google SRE workbook\", \"multi-window burn-rate alert\", or any reliability-target question. Ships SLO designer, error-budget calculator with multi-window burn-rate thresholds, and SLO reviewer that catches the common bugs (target too aggressive, window too short, conflicting SLOs, no SLI definition). 4 references on SLO principles + SLI design + error budget math + composition with feature-flags-architect/chaos-engineering/kubernetes-operator. NOT a generic observability skill \u2014 specifically the SLO discipline."
-    },
-    {
       "name": "slo-architect",
       "category": "engineering-advanced",
       "description": "Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on \"define an SLO\", \"what should our SLO be\", \"error budget\", \"burn rate\", \"SLI\", \"service level objective\", \"Google SRE workbook\", \"multi-window burn-rate alert\", or any reliability-target question. Ships SLO designer, error-budget calculator with multi-window burn-rate thresholds, and SLO reviewer that catches the common bugs (target too aggressive, window too short, conflicting SLOs, no SLI definition). 4 references on SLO principles + SLI design + error budget math + composition with feature-flags-architect/chaos-engineering/kubernetes-operator. NOT a generic observability skill \u2014 specifically the SLO discipline."
-    },
-    {
-      "name": "slo-design",
-      "category": "command",
-      "description": "Interactive wizard to design an SLO with SLI, target, error budget, and burn-rate alerts"
-    },
-    {
-      "name": "solo-founder",
-      "category": "agent",
-      "description": "Your co-founder who doesn't exist yet. Covers product, engineering, marketing, and strategy for one-person startups \u2014 because nobody's stopping you from making bad decisions and somebody should."
     },
     {
       "name": "spec-driven-workflow",
@@ -639,59 +274,14 @@
       "description": "Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices."
     },
     {
-      "name": "sprint-health",
-      "category": "command",
-      "description": "Sprint health scoring and velocity analysis for agile teams. Usage: /sprint-health <analyze|velocity> [options]"
-    },
-    {
-      "name": "sprint-plan",
-      "category": "command",
-      "description": "Sprint planning shortcut. Usage: /sprint-plan <goal> [capacity]"
-    },
-    {
-      "name": "sql-database-assistant",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy."
-    },
-    {
-      "name": "startup-cto",
-      "category": "agent",
-      "description": "Technical co-founder who's been through two startups and learned what actually matters. Makes architecture decisions, selects tech stacks, builds engineering culture, and prepares for technical due diligence \u2014 all while shipping fast with a small team."
-    },
-    {
-      "name": "status",
-      "category": "engineering",
-      "description": "Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations."
-    },
-    {
-      "name": "stripe-integration-expert",
-      "category": "engineering",
-      "description": "Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments, usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing. Covers Next.js, Express, and Django patterns. Use when integrating Stripe for the first time, debugging webhook reliability issues, migrating from a different payment provider, or adding usage-based billing to an existing subscription product."
-    },
-    {
-      "name": "tc",
-      "category": "command",
-      "description": "Track technical changes with structured records, a state machine, and session handoff. Usage: /tc <init|create|update|status|resume|close|export|dashboard> [args]"
-    },
-    {
       "name": "tc-tracker",
       "category": "engineering-advanced",
       "description": "Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions. Covers init/create/update/status/resume/close/export workflows for structured code change documentation."
     },
     {
-      "name": "tdd",
-      "category": "command",
-      "description": "Generate tests, analyze coverage, and run TDD workflows. Usage: /tdd <generate|coverage|validate> [options]"
-    },
-    {
       "name": "tdd-guide",
       "category": "engineering",
       "description": "Test-driven development skill for writing unit tests, generating test fixtures and mocks, analyzing coverage gaps, and guiding red-green-refactor workflows across Jest, Pytest, JUnit, Vitest, and Mocha. Use when the user asks to write tests, improve test coverage, practice TDD, generate mocks or stubs, or mentions testing frameworks like Jest, pytest, or JUnit."
-    },
-    {
-      "name": "tech-debt",
-      "category": "command",
-      "description": "Scan, prioritize, and report technical debt. Usage: /tech-debt <scan|prioritize|report> [options]"
     },
     {
       "name": "tech-debt-tracker",
@@ -717,36 +307,6 @@
       "name": "threat-detection",
       "category": "engineering",
       "description": "Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral anomalies in telemetry. Covers hypothesis-driven threat hunting, IOC sweep generation, z-score anomaly detection, and MITRE ATT&CK-mapped signal prioritization."
-    },
-    {
-      "name": "user-story",
-      "category": "command",
-      "description": "Generate user stories with acceptance criteria and sprint planning. Usage: /user-story <generate|sprint> [options]"
-    },
-    {
-      "name": "wiki-ingest",
-      "category": "command",
-      "description": "Ingest a source file from raw/ into the LLM Wiki \u2014 read, discuss, write summary page, update cross-references across 5-15 pages, regenerate index, append to log. Usage /wiki-ingest <path-to-source>"
-    },
-    {
-      "name": "wiki-init",
-      "category": "command",
-      "description": "Bootstrap a fresh LLM Wiki vault with the three-layer structure, schema files, and starter templates. Usage /wiki-init <path> --topic \"<topic>\" [--tool all|claude-code|codex|cursor|antigravity]"
-    },
-    {
-      "name": "wiki-lint",
-      "category": "command",
-      "description": "Run a health check on the LLM Wiki vault \u2014 mechanical checks (orphans, broken links, stale pages, missing frontmatter, log gap, duplicates) plus semantic checks (contradictions, cross-reference gaps, concepts missing their own page). Outputs a markdown report with suggested actions. Usage /wiki-lint [--stale-days N] [--log-gap-days N]"
-    },
-    {
-      "name": "wiki-log",
-      "category": "command",
-      "description": "Show recent entries from the LLM Wiki log (wiki/log.md). Uses the standardized ## [YYYY-MM-DD] header format so grep + tail works. Usage /wiki-log [--last N] [--op ingest|query|lint|...]"
-    },
-    {
-      "name": "wiki-query",
-      "category": "command",
-      "description": "Query the LLM Wiki \u2014 reads index.md first, drills into 3-10 relevant pages, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back as a new comparison or synthesis page. Usage /wiki-query \"<question>\""
     },
     {
       "name": "write-a-skill",

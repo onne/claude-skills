@@ -1,66 +1,22 @@
-# 🗺️ Semantic Content Map: Consumer-Optimized Toolkit
+# 🗺️ Semantic Content Map: Raw Tools Edition
 
-> An auto-generated semantic map of the capabilities, agents, and commands in this repository. Groomed specifically for Backend, Security, Cloud-Native Infra, and LLM Evals/MCP.
+> An auto-generated semantic map of the capabilities in this repository. Stripped of all slash-commands, conversational personas, and bloat. Just the raw, heavy-lifting technical tools.
 
-Total entries indexed: 150
+Total entries indexed: 62
 
-## 🤖 Agents (Personas)
 
-Agents are specialized personas designed to orchestrate specific sub-sets of skills.
-
-- **`README`**: Agent from personas
-- **`TEMPLATE`**: One paragraph describing what this agent does, who it's for, and when to activate it.
-- **`content-strategist`**: Builds content engines that rank, convert, and compound. Thinks in systems — topic clusters, not individual posts. Every piece earns its place or gets killed.
-- **`cs-engineering-lead`**: Engineering Team Lead agent for coordinating QA, security, data engineering, ML, and frontend/backend teams. Orchestrates engineering-team skills for team-level technical decisions. Spawn when users need team coordination, tech stack evaluation, incident response, or cross-functional engineering work.
-- **`cs-karpathy-reviewer`**: Reviews staged git changes against Karpathy's 4 coding principles. Runs complexity_checker on changed files, diff_surgeon on the diff, and produces a verdict with specific fix recommendations. Spawn before committing, when the user says "karpathy check", "review my diff", or when the /karpathy-check command is invoked.
-- **`cs-senior-engineer`**: Senior Engineer agent for architecture decisions, code review, DevOps, and API design. Orchestrates engineering and engineering-team skills for technical implementation work. Spawn when users need system design, code quality review, CI/CD pipeline setup, or infrastructure decisions.
-- **`cs-wiki-ingestor`**: Dispatched sub-agent that ingests a new source into an LLM Wiki vault. Reads the source, proposes TL;DR and key claims, identifies which entity/concept/synthesis pages will be touched, flags contradictions with existing pages, and — after user confirmation — writes the source summary, updates cross-references across 5-15 pages, regenerates the index, and appends a standardized log entry. Spawn when the user says "ingest this", "add this paper/article/book to the wiki", or drops a file into raw/.
-- **`cs-wiki-librarian`**: Dispatched sub-agent that answers queries against an LLM Wiki vault. Reads index.md first, drills into 3-10 relevant pages across categories, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back into the wiki as a new comparison or synthesis page. Spawn when the user asks a substantive question the wiki might answer, says "what does the wiki say about X", "compare A and B across my sources", or wants to explore a topic.
-- **`cs-wiki-linter`**: Dispatched sub-agent that runs a periodic health check on an LLM Wiki vault. Runs mechanical checks via scripts (orphans, broken links, stale pages, missing frontmatter, duplicate titles, log gaps), does semantic checks (contradictions, stale claims, cross-reference gaps, concepts missing their own page), and produces a markdown report with suggested actions. Spawn weekly, after batch ingests, or when the user says "check the wiki" / "lint my wiki" / "audit the vault".
-- **`cs-workspace-admin`**: Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration.
-- **`devops-engineer`**: Builds infrastructure that scales without babysitting. Automates everything worth automating. Monitors before it breaks. Treats clicking in consoles as a production incident waiting to happen.
-- **`growth-marketer`**: Growth marketing specialist for bootstrapped startups and indie hackers. Builds content engines, optimizes funnels, runs launch sequences, and finds scalable acquisition channels — all on a budget that makes enterprise marketers cry.
-- **`solo-founder`**: Your co-founder who doesn't exist yet. Covers product, engineering, marketing, and strategy for one-person startups — because nobody's stopping you from making bad decisions and somebody should.
-- **`startup-cto`**: Technical co-founder who's been through two startups and learned what actually matters. Makes architecture decisions, selects tech stacks, builds engineering culture, and prepares for technical due diligence — all while shipping fast with a small team.
-
-## 🎯 Skills by Domain
+## 🎯 Raw Technical Tools
 
 ### Engineering
 - **`adversarial-reviewer`**: Adversarial code review that breaks the self-review monoculture
 - **`ai-security`**: Use when assessing AI/ML systems for prompt injection, jailbreak vulnerabilities, model inversion risk, data poisoning exposure, or agent tool abuse
-- **`browserstack`**: >-
 - **`cloud-security`**: Use when assessing cloud infrastructure for security misconfigurations, IAM privilege escalation paths, S3 public exposure, open security group rules, or IaC security gaps
 - **`code-reviewer`**: Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin
-- **`coverage`**: >-
-- **`email-template-builder`**: Build complete transactional email systems: React Email templates, provider integration (Resend, Postmark, SendGrid, AWS SES), preview server, i18n support, dark mode, spam optimization, analytics tracking
-- **`engineering-skills`**: 23 engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw, and 6 more tools
-- **`epic-design`**: >
-- **`extract`**: Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL
-- **`fix`**: >-
-- **`generate`**: >-
-- **`google-workspace-cli`**: Google Workspace administration via the gws CLI
 - **`incident-commander`**: Comprehensive incident response framework from detection through resolution and post-incident review
 - **`incident-response`**: Use when a security incident has been detected or declared and needs classification, triage, escalation path determination, and forensic evidence collection
-- **`init`**: >-
-- **`migrate`**: >-
-- **`ms365-tenant-manager`**: Microsoft 365 tenant administration for Global Administrators
-- **`promote`**: Graduate a proven pattern from auto-memory (MEMORY
 - **`red-team`**: Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations
-- **`remember`**: Explicitly save important knowledge to auto-memory with timestamp and context
-- **`report`**: >-
-- **`review`**: Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics
 - **`security-pen-testing`**: Use when the user asks to perform security audits, penetration testing, vulnerability scanning, OWASP Top 10 checks, or offensive security assessments
 - **`self-improving-agent`**: Curate Claude Code's auto-memory into durable project knowledge
-- **`senior-architect`**: This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "plan for scalability", "make technical decisions", or "review system design"
-- **`senior-backend`**: Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening
-- **`senior-devops`**: Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure)
-- **`senior-prompt-engineer`**: This skill should be used when the user asks to "optimize prompts", "design prompt templates", "evaluate LLM outputs", "build agentic systems", "implement RAG", "create few-shot examples", "analyze token usage", or "design AI workflows"
-- **`senior-qa`**: Generates unit tests, integration tests, and E2E tests for React/Next
-- **`senior-secops`**: Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices
-- **`senior-security`**: Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing
-- **`skills-review`**: >-
-- **`status`**: Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations
-- **`stripe-integration-expert`**: Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments, usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing
 - **`tdd-guide`**: Test-driven development skill for writing unit tests, generating test fixtures and mocks, analyzing coverage gaps, and guiding red-green-refactor workflows across Jest, Pytest, JUnit, Vitest, and Mocha
 - **`tech-stack-evaluator`**: Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring
 - **`testrail`**: >-
@@ -77,14 +33,9 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`code-tour`**: Use when the user asks to create a CodeTour 
 - **`codebase-onboarding`**: Analyze a codebase and generate onboarding documentation for engineers, tech leads, and contractors
 - **`command-guide`**: >
-- **`database-designer`**: Use when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships
-- **`database-schema-designer`**: Use when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations
-- **`demo-video`**: Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions
 - **`dependency-auditor`**: Audit and manage dependencies across multi-language projects
 - **`docker-development`**: Docker and container development agent skill and plugin for Dockerfile optimization, docker-compose orchestration, multi-stage builds, and container security hardening
-- **`engineering-advanced-skills`**: 25 advanced engineering agent skills and plugins for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw
 - **`env-secrets-manager`**: Manage environment-variable hygiene and secrets safety across local development and production
-- **`eval`**: Evaluate and rank agent results by metric or LLM judge for an AgentHub session
 - **`feature-flags-architect`**: Use when adding, retiring, or auditing feature flags
 - **`focused-fix`**: Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-end
 - **`git-worktree-manager`**: Run parallel feature work safely with Git worktrees
@@ -92,12 +43,10 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`grill-with-docs`**: Docs-anchored grilling session — challenges a plan against the project's existing language (CONTEXT
 - **`handoff`**: Compact the current conversation into a handoff document for another agent to pick up
 - **`helm-chart-builder`**: Helm chart development agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw — chart scaffolding, values design, template patterns, dependency management, security hardening, and chart testing
-- **`interview-system-designer`**: This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "analyze interviewer bias", "create scoring rubrics", "build question banks", or "optimize hiring systems"
 - **`karpathy-coder`**: Use when writing, reviewing, or committing code to enforce Karpathy's 4 coding principles — surface assumptions before coding, keep it simple, make surgical changes, define verifiable goals
 - **`kubernetes-operator`**: Use when building a Kubernetes Operator — custom controllers that reconcile CRD state
 - **`llm-cost-optimizer`**: Use proactively whenever LLM API costs come up -- or should
 - **`llm-wiki`**: Use when building or maintaining a persistent personal knowledge base (second brain) in Obsidian where an LLM incrementally ingests sources, updates entity/concept pages, maintains cross-references, and keeps a synthesis current
-- **`loop`**: Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly)
 - **`mcp-server-builder`**: Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contracts instead of hand-written tool wrappers
 - **`migration-architect`**: Zero-downtime migration planning, compatibility validation, and rollback strategy generation
 - **`monorepo-navigator`**: Navigate, manage, and optimize monorepos
@@ -107,20 +56,13 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`prompt-governance`**: Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for production AI features
 - **`release-manager`**: Use when the user asks to plan releases, manage changelogs, coordinate deployments, create release branches, or automate versioning
 - **`runbook-generator`**: Generate operational runbooks from a service name — deployment, incident response, maintenance, and rollback workflows
-- **`sample-skill`**: Skill from engineering/skills/skill-tester/assets/sample-skill
 - **`secrets-vault-manager`**: Use when the user asks to set up secret management infrastructure, integrate HashiCorp Vault, configure cloud secret stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager), implement secret rotation, or audit secret access patterns
 - **`security-guidance`**: PreToolUse security-anti-pattern hook for Claude Code
-- **`self-eval`**: Honestly evaluate AI work quality using a two-axis scoring system
 - **`ship-gate`**: >
 - **`skill-security-auditor`**: >
 - **`skill-tester`**: Validate, test, and score the quality of skills within the claude-skills ecosystem
-- **`skills-chaos-engineering`**: Use when planning, running, or learning from chaos engineering experiments
-- **`skills-feature-flags-architect`**: Use when adding, retiring, or auditing feature flags
-- **`skills-kubernetes-operator`**: Use when building a Kubernetes Operator — custom controllers that reconcile CRD state
-- **`skills-slo-architect`**: Use when defining, reviewing, or operating SLOs/SLIs/error budgets
 - **`slo-architect`**: Use when defining, reviewing, or operating SLOs/SLIs/error budgets
 - **`spec-driven-workflow`**: Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices
-- **`sql-database-assistant`**: Use when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy
 - **`tc-tracker`**: Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions
 - **`tech-debt-tracker`**: Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans
 - **`terraform-patterns`**: Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw

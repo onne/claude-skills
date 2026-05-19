@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "gemini-cli-skills",
-  "total_skills": 180,
+  "total_skills": 150,
   "skills": [
     {
       "name": "README",
@@ -14,29 +14,9 @@
       "description": "One paragraph describing what this agent does, who it's for, and when to activate it."
     },
     {
-      "name": "a11y-audit",
-      "category": "engineering",
-      "description": "Accessibility audit skill for scanning, fixing, and verifying WCAG 2.2 Level A and AA compliance across React, Next.js, Vue, Angular, Svelte, and plain HTML codebases. Use when auditing accessibility, fixing a11y violations, checking color contrast, generating compliance reports, or integrating accessibility checks into CI/CD pipelines."
-    },
-    {
       "name": "adversarial-reviewer",
       "category": "engineering",
       "description": "Adversarial code review that breaks the self-review monoculture. Use when you want a genuinely critical review of recent changes, before merging a PR, or when you suspect Claude is being too agreeable about code quality. Forces perspective shifts through hostile reviewer personas that catch blind spots the author's mental model shares with the reviewer."
-    },
-    {
-      "name": "agent-designer",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to design multi-agent systems, create agent architectures, define agent communication patterns, or build autonomous agent workflows."
-    },
-    {
-      "name": "agent-workflow-designer",
-      "category": "engineering-advanced",
-      "description": "Design production-grade multi-agent workflows with clear pattern choice (sequential, parallel, hierarchical), handoff contracts, failure handling, and cost/context controls. Use when architecting a multi-step agent pipeline, choosing between single-agent vs multi-agent approaches, or refactoring an LLM workflow that suffers from context bloat or unreliable handoffs."
-    },
-    {
-      "name": "agenthub",
-      "category": "engineering-advanced",
-      "description": "Multi-agent collaboration plugin that spawns N parallel subagents competing on the same task via git worktree isolation. Agents work independently, results are evaluated by metric or LLM judge, and the best branch is merged. Use when: user wants multiple approaches tried in parallel \u2014 code optimization, content variation, research exploration, or any task that benefits from parallel competition. Requires: a git repo."
     },
     {
       "name": "ai-security",
@@ -69,29 +49,9 @@
       "description": "Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Karpathy's autoresearch. The agent edits a target file, runs a fixed evaluation, keeps improvements (git commit), discards failures (git reset), and loops indefinitely. Use when: user wants to optimize code speed, reduce bundle/image size, improve test pass rate, optimize prompts, improve content quality (headlines, copy, CTR), or run any measurable improvement loop. Requires: a target file, an evaluation command that outputs a metric, and a git repo."
     },
     {
-      "name": "aws-solution-architect",
-      "category": "engineering",
-      "description": "Design AWS architectures for startups using serverless patterns and IaC templates. Use when asked to design serverless architecture, create CloudFormation templates, optimize AWS costs, set up CI/CD pipelines, or migrate to AWS. Covers Lambda, API Gateway, DynamoDB, ECS, Aurora, and cost optimization."
-    },
-    {
-      "name": "azure-cloud-architect",
-      "category": "engineering",
-      "description": "Design Azure architectures for startups and enterprises. Use when asked to design Azure infrastructure, create Bicep/ARM templates, optimize Azure costs, set up Azure DevOps pipelines, or migrate to Azure. Covers AKS, App Service, Azure Functions, Cosmos DB, and cost optimization."
-    },
-    {
       "name": "behuman",
       "category": "engineering-advanced",
       "description": "Use when the user wants more human-like AI responses \u2014 less robotic, less listy, more authentic. Triggers: 'behuman', 'be real', 'like a human', 'more human', 'less AI', 'talk like a person', 'mirror mode', 'stop being so AI', or when conversations are emotionally charged (grief, job loss, relationship advice, fear). NOT for technical questions, code generation, or factual lookups."
-    },
-    {
-      "name": "board",
-      "category": "engineering-advanced",
-      "description": "Read, write, and browse the AgentHub message board for agent coordination."
-    },
-    {
-      "name": "browser-automation",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to automate browser tasks, scrape websites, fill forms, capture screenshots, extract structured data from web pages, or build web automation workflows. NOT for testing \u2014 use playwright-pro for that."
     },
     {
       "name": "browserstack",
@@ -229,11 +189,6 @@
       "description": "Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration."
     },
     {
-      "name": "data-quality-auditor",
-      "category": "engineering-advanced",
-      "description": "Audit datasets for completeness, consistency, accuracy, and validity. Profile data distributions, detect anomalies and outliers, surface structural issues, and produce an actionable remediation plan."
-    },
-    {
       "name": "database-designer",
       "category": "engineering-advanced",
       "description": "Use when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships."
@@ -322,16 +277,6 @@
       "name": "focused-fix",
       "category": "engineering-advanced",
       "description": "Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-end. Triggers: 'make X work', 'fix the Y feature', 'the Z module is broken', 'focus on [area]'. Not for quick single-bug fixes \u2014 this is for systematic deep-dive repair across all files and dependencies."
-    },
-    {
-      "name": "full-page-screenshot",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to capture a full-page screenshot, long screenshot, or complete page capture of a web page. Handles SPA scroll containers, lazy-loaded images, and very tall pages via Chrome DevTools Protocol with zero external dependencies."
-    },
-    {
-      "name": "gcp-cloud-architect",
-      "category": "engineering",
-      "description": "Design GCP architectures for startups and enterprises. Use when asked to design Google Cloud infrastructure, deploy to GKE or Cloud Run, configure BigQuery pipelines, optimize GCP costs, or migrate to GCP. Covers Cloud Run, GKE, Cloud Functions, Cloud SQL, BigQuery, and cost optimization."
     },
     {
       "name": "generate",
@@ -439,11 +384,6 @@
       "description": "Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contracts instead of hand-written tool wrappers. Python and TypeScript support, schema validation, safe evolution. Use when exposing an existing API as an MCP server, building tool integrations for Claude or Codex or Cursor, or scaffolding an MCP project from scratch."
     },
     {
-      "name": "merge",
-      "category": "engineering-advanced",
-      "description": "Merge the winning agent's branch into base, archive losers, and clean up worktrees."
-    },
-    {
       "name": "migrate",
       "category": "engineering",
       "description": ">-"
@@ -524,16 +464,6 @@
       "description": "Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for production AI features. Triggers: 'manage prompts in production', 'prompt versioning', 'prompt regression', 'prompt A/B test', 'prompt registry', 'eval pipeline'. NOT for writing or improving individual prompts (use senior-prompt-engineer). NOT for RAG pipeline design (use rag-architect). NOT for LLM cost reduction (use llm-cost-optimizer)."
     },
     {
-      "name": "pw",
-      "category": "engineering",
-      "description": "Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting."
-    },
-    {
-      "name": "rag-architect",
-      "category": "engineering-advanced",
-      "description": "Use when the user asks to design RAG pipelines, optimize retrieval strategies, choose embedding models, implement vector search, or build knowledge retrieval systems."
-    },
-    {
       "name": "red-team",
       "category": "engineering",
       "description": "Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point identification, OPSEC risk assessment, and crown jewel targeting."
@@ -554,11 +484,6 @@
       "description": ">-"
     },
     {
-      "name": "resume",
-      "category": "engineering-advanced",
-      "description": "Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating."
-    },
-    {
       "name": "retro",
       "category": "command",
       "description": "Analyze sprint retrospectives for patterns and action item tracking. Usage: /retro analyze <retro_data.json>"
@@ -572,11 +497,6 @@
       "name": "rice",
       "category": "command",
       "description": "RICE feature prioritization with scoring and capacity planning. Usage: /rice prioritize <features.csv> [options]"
-    },
-    {
-      "name": "run",
-      "category": "engineering-advanced",
-      "description": "One-shot lifecycle command that chains init \u2192 baseline \u2192 spawn \u2192 eval \u2192 merge in a single invocation."
     },
     {
       "name": "runbook-generator",
@@ -629,39 +549,9 @@
       "description": "Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening. Use when the user asks to \"design REST APIs\", \"optimize database queries\", \"implement authentication\", \"build microservices\", \"review backend code\", \"set up GraphQL\", \"handle database migrations\", or \"load test APIs\". Covers Node.js/Express/Fastify development, PostgreSQL optimization, API security, and backend architecture patterns."
     },
     {
-      "name": "senior-computer-vision",
-      "category": "engineering",
-      "description": "Computer vision engineering skill for object detection, image segmentation, and visual AI systems. Covers CNN and Vision Transformer architectures, YOLO/Faster R-CNN/DETR detection, Mask R-CNN/SAM segmentation, and production deployment with ONNX/TensorRT. Includes PyTorch, torchvision, Ultralytics, Detectron2, and MMDetection frameworks. Use when building detection pipelines, training custom models, optimizing inference, or deploying vision systems."
-    },
-    {
-      "name": "senior-data-engineer",
-      "category": "engineering",
-      "description": "Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack. Includes data modeling, pipeline orchestration, data quality, and DataOps. Use when designing data architectures, building data pipelines, optimizing data workflows, implementing data governance, or troubleshooting data issues."
-    },
-    {
-      "name": "senior-data-scientist",
-      "category": "engineering",
-      "description": "World-class senior data scientist skill specialising in statistical modeling, experiment design, causal inference, and predictive analytics. Covers A/B testing (sample sizing, two-proportion z-tests, Bonferroni correction), difference-in-differences, feature engineering pipelines (Scikit-learn, XGBoost), cross-validated model evaluation (AUC-ROC, AUC-PR, SHAP), and MLflow experiment tracking \u2014 using Python (NumPy, Pandas, Scikit-learn), R, and SQL. Use when designing or analysing controlled experiments, building and evaluating classification or regression models, performing causal analysis on observational data, engineering features for structured tabular datasets, or translating statistical findings into data-driven business decisions."
-    },
-    {
       "name": "senior-devops",
       "category": "engineering",
       "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and monitoring. Use when setting up pipelines, deploying applications, managing infrastructure, implementing monitoring, or optimizing deployment processes."
-    },
-    {
-      "name": "senior-frontend",
-      "category": "engineering",
-      "description": "Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS applications. Use when building React components, optimizing Next.js performance, analyzing bundle sizes, scaffolding frontend projects, implementing accessibility, or reviewing frontend code quality."
-    },
-    {
-      "name": "senior-fullstack",
-      "category": "engineering",
-      "description": "Fullstack development toolkit with project scaffolding for Next.js, FastAPI, MERN, and Django stacks, code quality analysis with security and complexity scoring, and stack selection guidance. Use when the user asks to \"scaffold a new project\", \"create a Next.js app\", \"set up FastAPI with React\", \"analyze code quality\", \"audit my codebase\", \"what stack should I use\", \"generate project boilerplate\", or mentions fullstack development, project setup, or tech stack comparison."
-    },
-    {
-      "name": "senior-ml-engineer",
-      "category": "engineering",
-      "description": "ML engineering skill for productionizing models, building MLOps pipelines, and integrating LLMs. Covers model deployment, feature stores, drift monitoring, RAG systems, and cost optimization. Use when the user asks about deploying ML models to production, setting up MLOps infrastructure (MLflow, Kubeflow, Kubernetes, Docker), monitoring model performance or drift, building RAG pipelines, or integrating LLM APIs with retry logic and cost controls. Focused on production and operational concerns rather than model research or initial training."
     },
     {
       "name": "senior-prompt-engineer",
@@ -689,11 +579,6 @@
       "description": "|"
     },
     {
-      "name": "setup",
-      "category": "engineering-advanced",
-      "description": "Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator."
-    },
-    {
       "name": "ship-gate",
       "category": "engineering-advanced",
       "description": ">"
@@ -719,11 +604,6 @@
       "description": "Use when adding, retiring, or auditing feature flags. Triggers on \"add a flag\", \"ship behind a flag\", \"rollout plan\", \"kill switch\", \"stale flags\", \"flag debt\", \"LaunchDarkly\", \"GrowthBook\", \"Statsig\", \"Unleash\", \"Flipt\", or any progressive-delivery question. Ships flag debt scanner, rollout planner, and kill-switch auditor (all stdlib Python), 4 references on flag taxonomy + provider trade-offs + rollout strategies + lifecycle, plus a /flag-cleanup slash command."
     },
     {
-      "name": "skills-init",
-      "category": "engineering-advanced",
-      "description": "Create a new AgentHub collaboration session with task, agent count, and evaluation criteria."
-    },
-    {
       "name": "skills-kubernetes-operator",
       "category": "engineering-advanced",
       "description": "Use when building a Kubernetes Operator \u2014 custom controllers that reconcile CRD state. Triggers on \"build an operator\", \"CRD design\", \"reconcile loop\", \"controller-runtime\", \"kubebuilder\", \"operator-sdk\", \"metacontroller\", \"KOPF\", \"operator capability levels\", or \"custom resource\". Ships CRD validator, reconcile-loop linter, and OperatorHub capability auditor (all stdlib Python), 4 references on the operator pattern + CRD design + reconcile patterns + tooling landscape, and a /operator-audit slash command. NOT a generic k8s skill \u2014 specifically the Operator pattern."
@@ -734,24 +614,9 @@
       "description": ">-"
     },
     {
-      "name": "skills-run",
-      "category": "engineering-advanced",
-      "description": "Run a single experiment iteration. Edit the target file, evaluate, keep or discard."
-    },
-    {
       "name": "skills-slo-architect",
       "category": "engineering-advanced",
       "description": "Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on \"define an SLO\", \"what should our SLO be\", \"error budget\", \"burn rate\", \"SLI\", \"service level objective\", \"Google SRE workbook\", \"multi-window burn-rate alert\", or any reliability-target question. Ships SLO designer, error-budget calculator with multi-window burn-rate thresholds, and SLO reviewer that catches the common bugs (target too aggressive, window too short, conflicting SLOs, no SLI definition). 4 references on SLO principles + SLI design + error budget math + composition with feature-flags-architect/chaos-engineering/kubernetes-operator. NOT a generic observability skill \u2014 specifically the SLO discipline."
-    },
-    {
-      "name": "skills-status",
-      "category": "engineering-advanced",
-      "description": "Show DAG state, agent progress, and branch status for an AgentHub session."
-    },
-    {
-      "name": "skills-status",
-      "category": "engineering-advanced",
-      "description": "Show experiment dashboard with results, active loops, and progress."
     },
     {
       "name": "slo-architect",
@@ -764,19 +629,9 @@
       "description": "Interactive wizard to design an SLO with SLI, target, error budget, and burn-rate alerts"
     },
     {
-      "name": "snowflake-development",
-      "category": "engineering",
-      "description": "Use when writing Snowflake SQL, building data pipelines with Dynamic Tables or Streams/Tasks, using Cortex AI functions, creating Cortex Agents, writing Snowpark Python, configuring dbt for Snowflake, or troubleshooting Snowflake errors."
-    },
-    {
       "name": "solo-founder",
       "category": "agent",
       "description": "Your co-founder who doesn't exist yet. Covers product, engineering, marketing, and strategy for one-person startups \u2014 because nobody's stopping you from making bad decisions and somebody should."
-    },
-    {
-      "name": "spawn",
-      "category": "engineering-advanced",
-      "description": "Launch N parallel subagents in isolated git worktrees to compete on the session task."
     },
     {
       "name": "spec-driven-workflow",
@@ -802,11 +657,6 @@
       "name": "startup-cto",
       "category": "agent",
       "description": "Technical co-founder who's been through two startups and learned what actually matters. Makes architecture decisions, selects tech stacks, builds engineering culture, and prepares for technical due diligence \u2014 all while shipping fast with a small team."
-    },
-    {
-      "name": "statistical-analyst",
-      "category": "engineering-advanced",
-      "description": "Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpret statistical significance with effect sizes. Use when you need to validate whether observed differences are real, size an experiment correctly before launch, or interpret test results with confidence."
     },
     {
       "name": "status",

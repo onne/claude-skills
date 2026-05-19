@@ -1,8 +1,8 @@
-# 🗺️ Semantic Content Map: Alireza Rezvani Skills Collection
+# 🗺️ Semantic Content Map: Consumer-Optimized Toolkit
 
-> An auto-generated semantic map of the capabilities, agents, and commands in this repository.
+> An auto-generated semantic map of the capabilities, agents, and commands in this repository. Groomed specifically for Backend, Security, Cloud-Native Infra, and LLM Evals/MCP.
 
-Total entries indexed: 180
+Total entries indexed: 150
 
 ## 🤖 Agents (Personas)
 
@@ -26,11 +26,8 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 ## 🎯 Skills by Domain
 
 ### Engineering
-- **`a11y-audit`**: Accessibility audit skill for scanning, fixing, and verifying WCAG 2
 - **`adversarial-reviewer`**: Adversarial code review that breaks the self-review monoculture
 - **`ai-security`**: Use when assessing AI/ML systems for prompt injection, jailbreak vulnerabilities, model inversion risk, data poisoning exposure, or agent tool abuse
-- **`aws-solution-architect`**: Design AWS architectures for startups using serverless patterns and IaC templates
-- **`azure-cloud-architect`**: Design Azure architectures for startups and enterprises
 - **`browserstack`**: >-
 - **`cloud-security`**: Use when assessing cloud infrastructure for security misconfigurations, IAM privilege escalation paths, S3 public exposure, open security group rules, or IaC security gaps
 - **`code-reviewer`**: Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin
@@ -40,7 +37,6 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`epic-design`**: >
 - **`extract`**: Turn a proven pattern or debugging solution into a standalone reusable skill with SKILL
 - **`fix`**: >-
-- **`gcp-cloud-architect`**: Design GCP architectures for startups and enterprises
 - **`generate`**: >-
 - **`google-workspace-cli`**: Google Workspace administration via the gws CLI
 - **`incident-commander`**: Comprehensive incident response framework from detection through resolution and post-incident review
@@ -49,7 +45,6 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`migrate`**: >-
 - **`ms365-tenant-manager`**: Microsoft 365 tenant administration for Global Administrators
 - **`promote`**: Graduate a proven pattern from auto-memory (MEMORY
-- **`pw`**: Production-grade Playwright testing toolkit
 - **`red-team`**: Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations
 - **`remember`**: Explicitly save important knowledge to auto-memory with timestamp and context
 - **`report`**: >-
@@ -58,19 +53,12 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`self-improving-agent`**: Curate Claude Code's auto-memory into durable project knowledge
 - **`senior-architect`**: This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "plan for scalability", "make technical decisions", or "review system design"
 - **`senior-backend`**: Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening
-- **`senior-computer-vision`**: Computer vision engineering skill for object detection, image segmentation, and visual AI systems
-- **`senior-data-engineer`**: Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure
-- **`senior-data-scientist`**: World-class senior data scientist skill specialising in statistical modeling, experiment design, causal inference, and predictive analytics
 - **`senior-devops`**: Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure)
-- **`senior-frontend`**: Frontend development skill for React, Next
-- **`senior-fullstack`**: Fullstack development toolkit with project scaffolding for Next
-- **`senior-ml-engineer`**: ML engineering skill for productionizing models, building MLOps pipelines, and integrating LLMs
 - **`senior-prompt-engineer`**: This skill should be used when the user asks to "optimize prompts", "design prompt templates", "evaluate LLM outputs", "build agentic systems", "implement RAG", "create few-shot examples", "analyze token usage", or "design AI workflows"
 - **`senior-qa`**: Generates unit tests, integration tests, and E2E tests for React/Next
 - **`senior-secops`**: Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices
 - **`senior-security`**: Security engineering toolkit for threat modeling, vulnerability analysis, secure architecture, and penetration testing
 - **`skills-review`**: >-
-- **`snowflake-development`**: Use when writing Snowflake SQL, building data pipelines with Dynamic Tables or Streams/Tasks, using Cortex AI functions, creating Cortex Agents, writing Snowpark Python, configuring dbt for Snowflake, or troubleshooting Snowflake errors
 - **`status`**: Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations
 - **`stripe-integration-expert`**: Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments, usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing
 - **`tdd-guide`**: Test-driven development skill for writing unit tests, generating test fixtures and mocks, analyzing coverage gaps, and guiding red-green-refactor workflows across Jest, Pytest, JUnit, Vitest, and Mocha
@@ -78,15 +66,10 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`testrail`**: >-
 - **`threat-detection`**: Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral anomalies in telemetry
 ### Engineering-Advanced
-- **`agent-designer`**: Use when the user asks to design multi-agent systems, create agent architectures, define agent communication patterns, or build autonomous agent workflows
-- **`agent-workflow-designer`**: Design production-grade multi-agent workflows with clear pattern choice (sequential, parallel, hierarchical), handoff contracts, failure handling, and cost/context controls
-- **`agenthub`**: Multi-agent collaboration plugin that spawns N parallel subagents competing on the same task via git worktree isolation
 - **`api-design-reviewer`**: Comprehensive REST API design review with automated linting, breaking-change detection, and design scorecards
 - **`api-test-suite-builder`**: Use when the user asks to generate API tests, create integration test suites, test REST endpoints, or build contract tests
 - **`autoresearch-agent`**: Autonomous experiment loop that optimizes any file by a measurable metric
 - **`behuman`**: Use when the user wants more human-like AI responses — less robotic, less listy, more authentic
-- **`board`**: Read, write, and browse the AgentHub message board for agent coordination
-- **`browser-automation`**: Use when the user asks to automate browser tasks, scrape websites, fill forms, capture screenshots, extract structured data from web pages, or build web automation workflows
 - **`caveman`**: >
 - **`changelog-generator`**: Produce consistent, auditable release notes from Conventional Commits
 - **`chaos-engineering`**: Use when planning, running, or learning from chaos engineering experiments
@@ -94,7 +77,6 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`code-tour`**: Use when the user asks to create a CodeTour 
 - **`codebase-onboarding`**: Analyze a codebase and generate onboarding documentation for engineers, tech leads, and contractors
 - **`command-guide`**: >
-- **`data-quality-auditor`**: Audit datasets for completeness, consistency, accuracy, and validity
 - **`database-designer`**: Use when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships
 - **`database-schema-designer`**: Use when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations
 - **`demo-video`**: Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions
@@ -105,7 +87,6 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`eval`**: Evaluate and rank agent results by metric or LLM judge for an AgentHub session
 - **`feature-flags-architect`**: Use when adding, retiring, or auditing feature flags
 - **`focused-fix`**: Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-end
-- **`full-page-screenshot`**: Use when the user asks to capture a full-page screenshot, long screenshot, or complete page capture of a web page
 - **`git-worktree-manager`**: Run parallel feature work safely with Git worktrees
 - **`grill-me`**: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree
 - **`grill-with-docs`**: Docs-anchored grilling session — challenges a plan against the project's existing language (CONTEXT
@@ -118,39 +99,28 @@ Agents are specialized personas designed to orchestrate specific sub-sets of ski
 - **`llm-wiki`**: Use when building or maintaining a persistent personal knowledge base (second brain) in Obsidian where an LLM incrementally ingests sources, updates entity/concept pages, maintains cross-references, and keeps a synthesis current
 - **`loop`**: Start an autonomous experiment loop with user-selected interval (10min, 1h, daily, weekly, monthly)
 - **`mcp-server-builder`**: Design and ship production-ready MCP (Model Context Protocol) servers from OpenAPI contracts instead of hand-written tool wrappers
-- **`merge`**: Merge the winning agent's branch into base, archive losers, and clean up worktrees
 - **`migration-architect`**: Zero-downtime migration planning, compatibility validation, and rollback strategy generation
 - **`monorepo-navigator`**: Navigate, manage, and optimize monorepos
 - **`observability-designer`**: Design production-ready observability strategies combining metrics, logs, and traces
 - **`performance-profiler`**: Systematic performance profiling for Node
 - **`pr-review-expert`**: Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs
 - **`prompt-governance`**: Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for production AI features
-- **`rag-architect`**: Use when the user asks to design RAG pipelines, optimize retrieval strategies, choose embedding models, implement vector search, or build knowledge retrieval systems
 - **`release-manager`**: Use when the user asks to plan releases, manage changelogs, coordinate deployments, create release branches, or automate versioning
-- **`resume`**: Resume a paused experiment
-- **`run`**: One-shot lifecycle command that chains init → baseline → spawn → eval → merge in a single invocation
 - **`runbook-generator`**: Generate operational runbooks from a service name — deployment, incident response, maintenance, and rollback workflows
 - **`sample-skill`**: Skill from engineering/skills/skill-tester/assets/sample-skill
 - **`secrets-vault-manager`**: Use when the user asks to set up secret management infrastructure, integrate HashiCorp Vault, configure cloud secret stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager), implement secret rotation, or audit secret access patterns
 - **`security-guidance`**: PreToolUse security-anti-pattern hook for Claude Code
 - **`self-eval`**: Honestly evaluate AI work quality using a two-axis scoring system
-- **`setup`**: Set up a new autoresearch experiment interactively
 - **`ship-gate`**: >
 - **`skill-security-auditor`**: >
 - **`skill-tester`**: Validate, test, and score the quality of skills within the claude-skills ecosystem
 - **`skills-chaos-engineering`**: Use when planning, running, or learning from chaos engineering experiments
 - **`skills-feature-flags-architect`**: Use when adding, retiring, or auditing feature flags
-- **`skills-init`**: Create a new AgentHub collaboration session with task, agent count, and evaluation criteria
 - **`skills-kubernetes-operator`**: Use when building a Kubernetes Operator — custom controllers that reconcile CRD state
-- **`skills-run`**: Run a single experiment iteration
 - **`skills-slo-architect`**: Use when defining, reviewing, or operating SLOs/SLIs/error budgets
-- **`skills-status`**: Show DAG state, agent progress, and branch status for an AgentHub session
-- **`skills-status`**: Show experiment dashboard with results, active loops, and progress
 - **`slo-architect`**: Use when defining, reviewing, or operating SLOs/SLIs/error budgets
-- **`spawn`**: Launch N parallel subagents in isolated git worktrees to compete on the session task
 - **`spec-driven-workflow`**: Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices
 - **`sql-database-assistant`**: Use when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy
-- **`statistical-analyst`**: Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpret statistical significance with effect sizes
 - **`tc-tracker`**: Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions
 - **`tech-debt-tracker`**: Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans
 - **`terraform-patterns`**: Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw

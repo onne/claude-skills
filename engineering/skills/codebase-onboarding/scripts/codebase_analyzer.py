@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Dict, Iterable, List
@@ -41,6 +42,8 @@ EXT_TO_LANG = {
     ".swift": "Swift",
     ".sql": "SQL",
     ".sh": "Shell",
+    ".md": "Markdown",
+    ".mdx": "Markdown",
 }
 
 KEY_CONFIG_FILES = [
@@ -113,6 +116,43 @@ def top_level_structure(root: Path, max_depth: int) -> List[str]:
     return lines
 
 
+def analyze_markdown_ast(paths: Iterable[Path]) -> Dict[str, object]:
+    """Treats Markdown files as code modules, extracting structural AST equivalents (headings/frontmatter)."""
+    md_files = [p for p in paths if p.suffix.lower() in {".md", ".mdx"}]
+    if not md_files:
+        return {"enabled": False}
+
+    h1_counter: Counter[str] = Counter()
+    h2_counter: Counter[str] = Counter()
+    frontmatter_count = 0
+    heading_re = re.compile(r"^(#{1,2})\s+(.+)$")
+
+    for p in md_files:
+        try:
+            content = p.read_text(encoding="utf-8", errors="ignore")
+            if content.startswith("---"):
+                frontmatter_count += 1
+            for line in content.splitlines():
+                match = heading_re.match(line)
+                if match:
+                    level = len(match.group(1))
+                    title = match.group(2).strip()
+                    if level == 1:
+                        h1_counter[title] += 1
+                    elif level == 2:
+                        h2_counter[title] += 1
+        except Exception:
+            pass
+
+    return {
+        "enabled": True,
+        "total_files": len(md_files),
+        "frontmatter_files": frontmatter_count,
+        "top_h1": dict(h1_counter.most_common(10)),
+        "top_h2": dict(h2_counter.most_common(15)),
+    }
+
+
 def build_report(root: Path, max_depth: int) -> Dict[str, object]:
     files = list(iter_files(root))
     languages = detect_languages(files)
@@ -129,6 +169,7 @@ def build_report(root: Path, max_depth: int) -> Dict[str, object]:
         "root": str(root),
         "file_count": total_files,
         "languages": languages,
+        "markdown_ast": analyze_markdown_ast(files),
         "key_config_files": find_key_configs(root),
         "top_extensions": dict(file_count_by_ext.most_common(12)),
         "largest_files": largest,
@@ -159,6 +200,19 @@ def print_text(report: Dict[str, object]) -> None:
     else:
         print("- No recognized source file extensions")
     print("")
+
+    md_ast = report.get("markdown_ast", {})
+    if md_ast.get("enabled"):
+        print("Markdown AST Structure (Documentation as Code)")
+        print(f"- Total markdown modules: {md_ast['total_files']}")
+        print(f"- Modules with frontmatter metadata: {md_ast['frontmatter_files']}")
+        print("- Dominant H1 Symbols (File Topics):")
+        for h1, cnt in md_ast['top_h1'].items():
+            print(f"  * {h1} ({cnt} occurrences)")
+        print("- Dominant H2 Symbols (Section Schemas):")
+        for h2, cnt in md_ast['top_h2'].items():
+            print(f"  * {h2} ({cnt} occurrences)")
+        print("")
 
     print("Key config files")
     configs = report["key_config_files"]

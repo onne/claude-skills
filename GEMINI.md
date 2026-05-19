@@ -1,75 +1,53 @@
-# Gemini CLI Foundations
+# Gemini CLI - Claude Skills & Agent Plugins Library
 
-This repository is a **comprehensive skills library** for Gemini CLI - reusable, production-ready skill packages that bundle domain expertise, best practices, analysis tools, and strategic frameworks.
+This repository is a production-ready, platform-agnostic library of 313+ agent skills and 400+ automation tools. It is designed using a **Domain-Driven Architecture** to provide AI agents with specialized expertise through a "write once, deploy anywhere" framework.
 
-## Using Skills with Gemini CLI
+## Repository Architecture
 
-Gemini CLI can activate any skill in this repository using the `activate_skill` tool.
+### 1. Domain Clusters (The Core)
+The repository is organized by business and technical functions:
+*   **Engineering & DevOps:** `/engineering`, `/engineering-team` (Architecture, SecOps, QA).
+*   **Leadership & Strategy:** `/c-level-advisor` (Founder-mode C-suite personas).
+*   **Operations & Growth:** `/business-growth`, `/business-operations`, `/commercial`.
+*   **Specialized Functions:** `/marketing-skill`, `/ra-qm-team`, `/research`, `/finance`.
 
-### Skill Locations
+### 2. Hierarchical Modules
+*   **Skills:** Modular instruction sets (`SKILL.md`) that define *how* to execute tasks.
+*   **Agents:** Curated personas (`agents/`) with distinct voices and skill loadouts.
+*   **Commands:** Markdown-based "slash commands" (`/commands`) for direct workflows.
+*   **Reference Assets:** Deep knowledge bases (`references/`) and templates (`assets/`).
 
-Skills are organized into domain folders. Each skill is a directory containing a `SKILL.md` file.
+## Operational Standards ("The Rules of the Game")
 
-| Domain | Folder |
-|--------|--------|
-| **Engineering (Core)** | `engineering-team/` |
-| **Engineering (Advanced)** | `engineering/` |
-| **Product Team** | `product-team/` |
-| **Marketing Skills** | `marketing-skill/` |
-| **C-Level Advisory** | `c-level-advisor/` |
-| **Project Management** | `project-management/` |
-| **Regulatory & QM** | `ra-qm-team/` |
-| **Business & Growth** | `business-growth/` |
-| **Finance** | `finance/` |
+All interactions and contributions MUST adhere to these foundational principles:
 
-### ClawHub Publishing Constraints
+### 1. Skill Authoring Patterns (The 10 Patterns)
+*   **Context-First:** Always check for domain context files (e.g., `project-context.md`) before asking questions.
+*   **Practitioner Voice:** Act as a senior expert (opinionated, direct) rather than a neutral textbook.
+*   **Multi-Mode:** Design for multiple entry points (Build from scratch vs. Optimize existing).
+*   **Related Skills:** Always provide "When to use / When NOT to use" disambiguation for related skills.
+*   **Proactive Triggers:** Surface risks and issues without being asked when patterns are detected.
 
-When skills are published to **ClawHub** (clawhub.com):
-- **cs- prefix for slug conflicts only** — applies only on the ClawHub registry when another publisher already owns the slug. Repo folder names and local skill names are never renamed.
-- **No paid/commercial service dependencies** — skills must not require paid third-party API keys or commercial services unless provided by the project itself.
-- **plugin.json** — ONLY fields: `name`, `description`, `version`, `author`, `homepage`, `repository`, `license`, `skills: "./"`.
-- **Rate limit:** 5 new skills/hour on ClawHub. Use drip publishing for bulk operations.
+### 2. Communication Standard
+All output should follow the **Bottom Line First** protocol:
+1.  **BOTTOM LINE:** One-sentence answer.
+2.  **WHAT:** Categorized findings with confidence tags (🟢 verified, 🟡 medium, 🔴 assumed).
+3.  **WHY THIS MATTERS:** Business impact/consequence.
+4.  **HOW TO ACT:** Concrete actions with owners and deadlines.
 
-### Activating a Skill
+### 3. Technical Constraints
+*   **Python Scripts:** Must use **standard library only** (no `pip` installs). Must support `--json` and `--help`.
+*   **File Economy:** Edit existing files rather than creating new ones unless necessary.
+*   **SKILL.md Limits:** Keep main skill files under 500 lines (ideally <200); move depth to `references/`.
 
-To activate a skill, use the folder name. For example:
+## Workflow & Pipeline
 
-```javascript
-activate_skill(name="senior-architect")
-activate_skill(name="content-creator")
-activate_skill(name="cto-advisor")
-```
+*   **Production Pipeline:** Every skill follows: Intent → Research → Draft → Eval → Iterate → Compliance → Package → Deploy → Verify.
+*   **Quality Gate:** Skills must pass a structured compliance check (Score ≥ 85%) before merging.
+*   **Orchestration:** Combine Personas (Who), Skills (How), and Commands (What) to solve complex, cross-domain problems.
 
-The Gemini CLI will search for the corresponding `SKILL.md` file within the repository and load its instructions.
+## Usage in Gemini CLI
 
-## Agents & Commands
-
-In addition to skills, this repository provides specialized **Agents** and **Commands**.
-
-- **Agents** (`agents/`): Multi-agent personas for complex coordination (e.g., `cs-engineering-lead`).
-- **Commands** (`commands/`): Predefined workflows for common tasks (e.g., `/tdd`, `/tech-debt`).
-
-Activate them as skills:
-```javascript
-activate_skill(name="cs-engineering-lead")
-activate_skill(name="tdd")
-```
-
-## Python Automation Tools
-
-Each skill includes deterministic Python CLI tools in its `scripts/` folder. These use the standard library only.
-
-Example usage:
-```bash
-python3 marketing-skill/content-production/scripts/seo_checker.py article.txt
-```
-
-## Setup for Gemini CLI Users
-
-Run the setup script to initialize the Gemini-specific skill index and symlinks:
-
-```bash
-./scripts/gemini-install.sh
-```
-
-This will create a `.gemini/skills/` directory for easier discovery.
+*   **Install:** Run `./scripts/gemini-install.sh`.
+*   **Activate:** Use `activate_skill(name="<skill-name>")`.
+*   **Validate:** Use `engineering/skill-tester/scripts/skill_validator.py` for new modules.
